@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dark Mode Toggle with Icon</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      transition: background-color 0.5s, color 0.5s;
+      background-color: white;
+      color: black;
+      padding: 20px;
+    }
+
+    body.dark-mode {
+      background-color: #1e1e1e;
+      color: white;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background: none;
+      border: 2px solid #333;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .icon {
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>My Cool Website</h1>
+  <p>Click the button below to toggle dark mode.</p>
+
+  <button onclick="toggleDarkMode()">
+    <span class="icon" id="modeIcon">🌞</span>
+    Toggle Dark Mode
+  </button>
+
+  <script>
+    function toggleDarkMode() {
+      const body = document.body;
+      const icon = document.getElementById('modeIcon');
+
+      body.classList.toggle('dark-mode');
+
+      // Change icon based on mode
+      if (body.classList.contains('dark-mode')) {
+        icon.textContent = '🌙'; // moon
+      } else {
+        icon.textContent = '🌞'; // sun
+      }
+    }
+  </script>
+
+</body>
+</html>
